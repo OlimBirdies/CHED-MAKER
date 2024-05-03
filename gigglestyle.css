@@ -1,0 +1,206 @@
+/* Import the font */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+/* Set the font family for the entire document */
+body {
+  font-family: 'Press Start 2P', sans-serif;
+}
+
+/* Update container styles */
+.container {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: #eeeeee; /* Light grey background */
+}
+
+/* Update section styles */
+.preview-section, .layers-section {
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  border: 1px solid #aaaaaa; /* Medium grey border */
+  background-color: #f5f5f5; /* Light grey background */
+}
+
+.layers-section {
+  overflow-y: auto;
+}
+
+/* Update thumbnail styles */
+.layer-thumbnail {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  border: 1px solid #cccccc; /* Light grey border */
+  transition: border-color 0.1s ease;
+}
+
+/* Darken border on hover */
+.layer-thumbnail:hover {
+  border-color: #999999; /* Darker grey border */
+}
+
+/* Darken border on active */
+.layer-thumbnail:active {
+  border-color: #666666; /* Even darker grey border */
+}
+
+/* Update preview box styles */
+.preview-box {
+  width: 400px; /* Adjust width as needed */
+  height: 400px; /* Adjust height as needed */
+  position: relative;
+  box-sizing: border-box; /* Include border in width and height calculations */
+  margin-bottom: 20px;
+  padding: 0;
+}
+
+.preview-box img {
+  max-width: 100%;
+  max-height: 100%;
+  position: absolute;
+  object-fit: cover;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Header Styles */
+header {
+  background-color: #777777; /* Dark grey background */
+  padding: 8px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* Footer Styles */
+footer {
+  background-color: #777777; /* Dark grey background */
+  padding: 20px;
+  text-align: center;
+}
+
+footer button {
+  background-color: #4caf50; /* Green color */
+  color: black; /* Black text color */
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  margin: 0 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+footer button:hover {
+  background-color: #38ff42; /* Darker green color */
+}
+
+/* Preview buttons */
+#reset-button,
+#download-button,
+#randomize-button {
+  background-color: #4caf50; /* Green color */
+  margin-bottom: 20px;
+  color: black; /* Black text color */
+  padding: 10px 20px;
+  border: 2px solid transparent; /* Add a slight outline */
+  border-radius: 5px;
+  margin-right: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, border-color 0.3s ease; /* Add transition */
+}
+
+/* Darken the button on hover */
+#reset-button:hover,
+#download-button:hover,
+#randomize-button:hover {
+  background-color: #38ff42; /* Darker green color */
+}
+
+/* Darken the button on active */
+#reset-button:active,
+#download-button:active,
+#randomize-button:active {
+  background-color: #3f9142; /* Even darker green color */
+}
+
+/* Update the preview buttons with shiny effect */
+#reset-button,
+#download-button,
+#randomize-button {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08); /* Add shadow */
+}
+
+/* Add a slight outline on focus */
+#reset-button:focus,
+#download-button:focus,
+#randomize-button:focus {
+  outline: 3px solid #07610a; /* Green color outline */
+}
+
+/* Apply Press Start 2P font to all buttons */
+button {
+    font-family: 'Press Start 2P', sans-serif;
+  }
+
+  /* Add a light grey outline to all image asset boxes */
+.layer-thumbnail {
+    border: 3px solid #cccccc; /* Light grey outline */
+  }
+  
+  /* Reset margin and padding for the entire document */
+body, html {
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Update container styles */
+.container {
+    display: flex;
+    flex-direction: column; /* Change to column layout on small screens */
+    padding: 20px;
+    background-color: #eeeeee; /* Light grey background */
+  }
+  
+  /* Update section styles */
+  .preview-section, .layers-section {
+    width: 100%; /* Take full width on small screens */
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #aaaaaa; /* Medium grey border */
+    background-color: #f5f5f5; /* Light grey background */
+  }
+  
+  /* Show footer buttons on screens wider than 768px */
+  @media only screen and (min-width: 768px) {
+    /* Update container styles */
+    .container {
+      flex-direction: row; /* Change back to row layout */
+      justify-content: space-between;
+    }
+  
+    /* Show footer buttons */
+    footer {
+      display: block;
+    }
+  }
+  
+  @media only screen and (max-width: 768px) {
+    .preview-section {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 40%;
+      z-index: 999; /* Ensure it appears above other content */
+    }
+}
